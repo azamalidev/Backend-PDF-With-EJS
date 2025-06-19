@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./api",
+    "target": "es2020",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react-jsx",                 // ⬅ Important for `.tsx` files
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "jsx": "react"    
-  }
+    "outDir": "dist"
+  },
+  "include": ["api/**/*", "pdf/**/*"],  // ⬅ Include BOTH api and pdf folders
+  "exclude": ["node_modules"]
 }
