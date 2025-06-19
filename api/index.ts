@@ -1,3 +1,8 @@
-export default function handler(req:any, res:any) {
-  res.status(200).send("Hello from Vercel Serverless API 🚀");
-}
+const express = require("express");
+const app = express();
+
+app.get("/", (_req: any, res: { send: (arg0: string) => any; }) => res.send("Express on Vercel"));
+
+app.listen(3000, () => console.log("Server ready on port 3000."));
+
+module.exports = app;
