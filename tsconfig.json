@@ -3,12 +3,11 @@
     "target": "es2020",
     "module": "esnext",
     "moduleResolution": "node",
-    "jsx": "react-jsx",                 // ⬅ Important for `.tsx` files
-    "strict": true,
+    "jsx": "react-jsx",
     "esModuleInterop": true,
-    "skipLibCheck": true,
+    "strict": true,
     "outDir": "dist"
   },
-  "include": ["api/**/*", "pdf/**/*"],  // ⬅ Include BOTH api and pdf folders
+  "include": ["api/**/*", "pdf/**/*"],
   "exclude": ["node_modules"]
 }
