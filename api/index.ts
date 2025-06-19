@@ -1,13 +1,11 @@
 import express from 'express';
-import pdfRoute from './routes/pdfRoute';
+import pdfRoute from '../src/routes/pdfRoute.js';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-app.use('/api/pdf', pdfRoute);
-
+app.use('/api', pdfRoute);
 app.get('/', (req, res) => {
-  const pdfUrl = `/api/pdf/generate`;
+  const pdfUrl = `/api/generate-pdf`;
 
   res.send(`
     <html>
@@ -76,10 +74,6 @@ app.get('/', (req, res) => {
   `);
 });
 
-
-
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running at http://localhost:${PORT}`);
-});
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Running at http://localhost:${PORT}`));
+export default app;

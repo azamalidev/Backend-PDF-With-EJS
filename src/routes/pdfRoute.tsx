@@ -5,7 +5,7 @@ import React from 'react';
 
 const router = express.Router();
 
-router.get('/generate', async (req, res) => {
+router.get('/generate-pdf', async (req, res) => {
   try {
     res.setHeader('Content-Type', 'application/pdf');
 
