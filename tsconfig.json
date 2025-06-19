@@ -7,6 +7,6 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "jsx": "react"     // ✅ Required for JSX support in MyDocument.tsx
+    "jsx": "react"    
   }
 }
