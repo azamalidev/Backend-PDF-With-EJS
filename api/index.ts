@@ -1,6 +1,3 @@
-import express from "express";
-const app = express();
-
-app.get("/", (req: any, res: any) => res.send("Express on Vercel"));
-
-app.listen(3000, () => console.log("Server ready on port 3000."));
+export default function handler(req:any, res:any) {
+  res.status(200).send("Hello from Vercel Serverless API 🚀");
+}
