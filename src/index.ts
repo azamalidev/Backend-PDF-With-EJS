@@ -1,20 +1,16 @@
-import express from 'express';
-import pdfRoute from './routes/pdfRoute';
+import express, { Request, Response } from 'express'
 
-const app = express();
+const app = express()
+const port = process.env.PORT || 8080
 
-app.use('/api', pdfRoute);
+app.get('/', (req: any, res: any) => {
+  return res.send('Express Typescript on Vercel')
+})
 
-app.get('/', (req, res) => {
-  const pdfUrl = `/api/generate-pdf`;
-  res.send(`
-    <h1>📄 PDF API is running 🚀</h1>
-    <a href="${pdfUrl}?download=true">Download PDF</a>
-  `);
-});
+app.get('/ping', (req: any, res: any) => {
+  return res.send('pong 🏓')
+})
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
-
-
-export default app;
+app.listen(port, () => {
+  return console.log(`Server is listening on ${port}`)
+})
