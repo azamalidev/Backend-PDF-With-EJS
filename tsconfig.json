@@ -1,13 +1,16 @@
+
+
 {
   "compilerOptions": {
     "target": "es2020",
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react-jsx",
+    "outDir": "dist",
     "esModuleInterop": true,
     "strict": true,
-    "outDir": "dist"
+    "skipLibCheck": true
   },
-  "include": ["api/**/*", "pdf/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["api/**/*", "pdf/**/*"]
 }
+
