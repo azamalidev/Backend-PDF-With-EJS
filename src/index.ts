@@ -1,5 +1,5 @@
 import express from 'express';
-import pdfRoute from './routes/pdfRoute.js';
+import pdfRoute from './pdf/MyDocument';
 
 const app = express();
 
