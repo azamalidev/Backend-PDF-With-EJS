@@ -1,39 +1,15 @@
 {
-  "name": "my-new-project",
+  "name": "my-express-vercel",
   "version": "1.0.0",
-  "type": "module",
-
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-   "build": "rimraf dist && tsc",
-  "ts.check": "tsc --project tsconfig.json",
-  "add-build": "git add dist",
-  "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch api/index.ts"
   },
-  "pre-commit": [
-    "ts.check",
-    "build",
-    "add-build"
-  ],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "@react-pdf/renderer": "^4.3.0",
-    "express": "^5.1.0",
-    "nodemon": "^3.1.10",
-    "pre-commit": "^1.2.2",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "rimraf": "^6.0.1"
+    "express": "^5.1.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "ts-node-dev": "^2.0.0",
     "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "typescript": "^5.4.5"
   }
 }
