@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "jsx": "react-jsx",          // ✅ THIS enables JSX in .ts/.tsx files
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
+}
