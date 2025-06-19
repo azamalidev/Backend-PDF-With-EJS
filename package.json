@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.3",
+    "pre-commit": "^1.2.2",
     "tsx": "^4.20.3",
     "typescript": "^5.0.0"
   }
