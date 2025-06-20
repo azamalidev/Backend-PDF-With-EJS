@@ -33,3 +33,4 @@ coverage/
 # Optional: ignore generated PDF or temp folders if any
 *.pdf
 tmp/
+.vercel
