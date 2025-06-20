@@ -19,48 +19,66 @@ app.get('/', (_req, res) => {
 app.get('/download1', (_req, res) => {
   const doc = new PDFDocument({
     size: 'A4',
-    margins: { top: 50, bottom: 50, left: 72, right: 72 }, // Customize page margins
+    margins: { top: 50, bottom: 50, left: 50, right: 50 }, // Clean, symmetric margins
   });
 
   res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', 'attachment; filename="document.pdf"');
+  res.setHeader('Content-Disposition', 'attachment; filename="custom-document.pdf"');
 
   doc.pipe(res);
 
-  // ✅ Title with color and custom font size
-  doc.fillColor('#0070f3').fontSize(28).text('🚀 Welcome to PDFKit PDF!', {
-    align: 'center',
-    underline: true,
-  });
-
-  doc.moveDown(2); // Add vertical space (2 line breaks)
-
-  // ✅ Body text with smaller font and different color
-  doc.fillColor('#333333').fontSize(16).text(
-    'Generated from a Vercel Serverless Function.',
-    {
+  // ✅ Title
+  doc
+    .fillColor('#0A84FF')
+    .fontSize(30)
+    .text(' Welcome to PDF Project!', {
       align: 'center',
-      lineGap: 10, // Line spacing between lines if multiline text
-    }
-  );
-
-  doc.moveDown();
-
-  // ✅ Another paragraph, smaller, gray text
-  doc.fillColor('#555555').fontSize(12).text(
-    'No HTML used here. This layout is fully styled using PDFKit.',
-    {
-      align: 'center',
-    }
-  );
+      underline: true,
+    });
 
   doc.moveDown(2);
 
-  // ✅ Example of positioned text (manual control)
-  doc.fillColor('red').fontSize(12).text('Positioned Text Example', 100, 500);
+  // ✅ Intro Paragraph
+  doc
+    .fillColor('#333')
+    .fontSize(16)
+    .text(
+      'This PDF document is dynamically generated from a Node.js Express server deployed on Vercel.',
+      {
+        align: 'center',
+        lineGap: 6,
+      }
+    );
+
+  doc.moveDown();
+
+  // ✅ Feature List
+  doc.fillColor('#555').fontSize(14).text('Features Demonstrated:', { underline: true });
+
+  const features = [
+    '• Dynamic PDF generation',
+    '• Styled text with colors and alignment',
+    '• Deployed using Vercel Serverless Functions',
+    '• Generated entirely without HTML',
+  ];
+
+  features.forEach((line) => {
+    doc.moveDown(0.5).text(line, { indent: 20 });
+  });
+
+  doc.moveDown(2);
+
+  // ✅ Footer Section
+  doc
+    .fillColor('#999')
+    .fontSize(12)
+    .text('Generated with ❤️ using PDFKit.', {
+      align: 'center',
+    });
 
   doc.end();
 });
+
 
 app.get('/download', async (_req, res) => {
   const html = `
