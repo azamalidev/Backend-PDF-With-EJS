@@ -4,7 +4,11 @@
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "jsx": "react-jsx",        // ✅ Modern JSX transform (Recommended for React 17+)
+    "allowSyntheticDefaultImports": true, // ✅ Useful for interop with React packages
+    "resolveJsonModule": true,             // Optional: in case you import JSON files
+    "skipLibCheck": true                   // Optional: avoids some type conflicts with node modules
   },
   "include": ["api"]
 }

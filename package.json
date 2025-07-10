@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "tsx api/index.ts",
+    "dev": "tsx api/index.tsx",
     "build": "tsc"
   },
   "dependencies": {
